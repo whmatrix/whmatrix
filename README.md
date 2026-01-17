@@ -1,16 +1,24 @@
-# Hi, I'm John Mitchell
+# whmatrix
 
-I build production-ready search and retrieval systems for large research document collections.
+## Professional / Client-Facing Work
+Start here if you are evaluating production-grade semantic indexing, RAG infrastructure, or audit-ready datasets.
 
-## Start Here
+- **Universal Protocol v4.23 (canonical)**
+  https://github.com/whmatrix/universal-protocol-v4.23
 
-- **[Universal Protocol v4.23](https://github.com/whmatrix/universal-protocol-v4.23)** — Deliverable contracts, audit criteria, quality gates, and portfolio artifacts
+- **Large-scale implementation portfolio**
+  https://github.com/whmatrix/semantic-indexing-batch-02
 
-## Code Portfolio
+- **Public website**
+  https://github.com/whmatrix/whmatrix.github.io
 
-- **[semantic-indexing-batch-02](https://github.com/whmatrix/semantic-indexing-batch-02)** — Production indexing pipeline (8.35M+ vectors)
-- [semantic-indexing-batch-01](https://github.com/whmatrix/semantic-indexing-batch-01) — Earlier foundation
+---
 
-## Website
+## Research & Long-Form Development (Non-Client-Facing)
+Ongoing research into human–AI recursive collaboration, LLaMA-based systems, cognitive tooling, and epistemic workflows.
 
-- **[whmatrix.github.io](https://whmatrix.github.io)** — Full portfolio and contact links
+- *(link here once created)* `recursive-ai-research-log`
+
+> This section documents exploratory work, personal development, and experimental systems.  
+> It is not representative of production guarantees or client deliverables.
+
