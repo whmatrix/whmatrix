@@ -1,3 +1,7 @@
+> **Status: ENTRY_ROUTER (Portfolio Hub)**
+>
+> Start here for an overview of professional work and research.
+
 # whmatrix
 
 ## Professional / Client-Facing Work
