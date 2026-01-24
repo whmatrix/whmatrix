@@ -2,6 +2,15 @@
 >
 > Start here for an overview of professional work and research.
 
+## Repository Role
+
+This repository serves as the **GitHub-native entrypoint** for my work.
+It indexes and routes to canonical protocol specifications, production
+indexing artifacts, and structural analysis systems.
+
+The portfolio site at https://whmatrix.github.io serves a **separate role**
+as an external narrative and client-facing surface.
+
 ## Start Here
 
 | Resource | Description |
