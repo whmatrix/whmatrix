@@ -11,6 +11,12 @@
 
 > Note: [semantic-indexing-batch-01](https://github.com/whmatrix/semantic-indexing-batch-01) is a superseded foundation batch.
 
+## Structural Analysis Projects
+
+- https://github.com/whmatrix/interaction-mechanics-index — Behavior-first retrieval system for human–AI dialogue segments using dual FAISS indices
+- https://github.com/whmatrix/comparative-grammar-gpt-vs-claude — Structural crosswalk between GPT and Claude interaction grammars
+- https://github.com/whmatrix/structural-collaboration-primitives — Interaction primitive definitions derived from validated dialogue typologies
+
 ---
 
 # whmatrix
