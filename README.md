@@ -1,6 +1,8 @@
-# Wade (@whmatrix)
+> **Author:** John Mitchell (@whmatrix)
 
-*Semantic indexing and RAG infrastructure engineer.*
+# John Mitchell (@whmatrix)
+
+*Semantic Indexing & RAG Infrastructure Engineer*
 
 I build the infrastructure that makes semantic search work at scale:
 protocol-driven validation, production-tested indexing pipelines,
