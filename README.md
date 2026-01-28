@@ -17,6 +17,7 @@ as an external narrative and client-facing surface.
 |----------|-------------|
 | **[Universal Protocol v4.23](https://github.com/whmatrix/universal-protocol-v4.23)** | Canonical spec: deliverable contracts, audit contracts, quality gates |
 | **[semantic-indexing-batch-02](https://github.com/whmatrix/semantic-indexing-batch-02)** | Production implementation: 8.3M+ vectors indexed |
+| **[research-corpus-discovery](https://github.com/whmatrix/research-corpus-discovery)** | Applied methodology: semantic search across 10 research institutions, 4,600+ documents |
 
 > Note: [semantic-indexing-batch-01](https://github.com/whmatrix/semantic-indexing-batch-01) is a superseded foundation batch.
 
@@ -38,11 +39,6 @@ Production-grade semantic indexing, RAG infrastructure, and audit-ready datasets
 
 ---
 
-## Research & Long-Form Development (Non-Client-Facing)
+## Applied Research
 
-Ongoing research into human–AI recursive collaboration, LLaMA-based systems, cognitive tooling, and epistemic workflows.
-
-- *(link here once created)* `recursive-ai-research-log`
-
-> This section documents exploratory work, personal development, and experimental systems.
-> It is not representative of production guarantees or client deliverables.
+- https://github.com/whmatrix/research-corpus-discovery — Semantic search framework tested on 10 research institutions with 4,600+ documents, anonymized case studies, and methodology documentation
