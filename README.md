@@ -1,6 +1,10 @@
-# whmatrix: Semantic Indexing & RAG Infrastructure
+# Wade (@whmatrix)
 
-*Open-source protocol, tested methodology, and production-scale implementations for building semantic search systems.*
+*Semantic indexing and RAG infrastructure engineer.*
+
+I build the infrastructure that makes semantic search work at scale:
+protocol-driven validation, production-tested indexing pipelines,
+and reproducible methodology across real institutional corpora.
 
 ---
 
@@ -110,6 +114,39 @@ All repos include non-claims sections, stated limitations, runnable code where a
 ## Architecture Overview
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full system diagram, data flow, component responsibilities, and scale reference.
+
+---
+
+## Tech Stack
+
+**Core:** Python, FAISS (IndexFlatIP), intfloat/e5-large-v2, PyTorch (FP16/CUDA)
+**Infrastructure:** Protocol-driven validation, multi-scale indexing, checkpointing
+**Analysis:** Dialogue grammar comparison, interaction primitives, dual-index retrieval
+
+---
+
+## Get Started
+
+```bash
+git clone https://github.com/whmatrix/research-corpus-discovery
+cd research-corpus-discovery
+pip install -r scripts/requirements.txt
+python scripts/build_index.py --help
+```
+
+See [QUICK_START.md](https://github.com/whmatrix/research-corpus-discovery/blob/main/QUICK_START.md) for a walkthrough.
+
+---
+
+## By the Numbers
+
+| Metric | Value |
+|--------|-------|
+| Vectors indexed | 9M+ |
+| Datasets processed | 19 |
+| Research documents analyzed | 4,600+ |
+| Institutions validated | 10 |
+| Open-source repos | 9 |
 
 ---
 
