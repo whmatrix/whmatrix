@@ -143,15 +143,46 @@ See [QUICK_START.md](https://github.com/whmatrix/research-corpus-discovery/blob/
 
 ---
 
+## Expected Output (Mini-Index Demo)
+
+Running `demo_query.py` in [`semantic-indexing-batch-02/mini-index/`](https://github.com/whmatrix/semantic-indexing-batch-02/tree/main/mini-index) produces:
+
+```
+Query: 'machine learning and neural networks'
+  [1] score=0.878  Neural Networks and Deep Learning...
+      doc: doc_01_neural_networks.txt
+
+Query: 'semantic search and vector retrieval'
+  [1] score=0.879  Semantic Search and Dense Retrieval...
+      doc: doc_03_semantic_search.txt
+
+Query: 'how to build a FAISS index'
+  [1] score=0.844  FAISS: Fast Similarity Search at Scale...
+      doc: doc_04_faiss_indexing.txt
+```
+
+Scores above 0.83 indicate strong semantic alignment. The top-1 result matches the query topic in all cases. Run it yourself:
+
+```bash
+git clone https://github.com/whmatrix/semantic-indexing-batch-02
+cd semantic-indexing-batch-02/mini-index
+pip install sentence-transformers faiss-cpu
+python demo_query.py
+```
+
+---
+
 ## By the Numbers
 
-| Metric | Value |
-|--------|-------|
-| Vectors indexed | 9M+ |
-| Datasets processed | 19 |
-| Research documents analyzed | 4,600+ |
-| Institutions validated | 10 |
-| Open-source repos | 9 |
+| Metric | Value | Source |
+|--------|-------|--------|
+| Vectors indexed | 9,016,688 | batch-01 (661K) + batch-02 (8.36M) |
+| Datasets processed | 19 | batch-01 (6) + batch-02 (3) + research-corpus (10) |
+| Research documents analyzed | 4,600+ | research-corpus-discovery |
+| Institutions validated | 10 | research-corpus-discovery |
+| Open-source repos | 9 | This portfolio |
+
+See [`PORTFOLIO_MANIFEST.json`](./PORTFOLIO_MANIFEST.json) for itemized per-dataset vector counts and validation sources.
 
 ---
 

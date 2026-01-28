@@ -1,0 +1,166 @@
+{
+  "author": "John Mitchell (@whmatrix)",
+  "date_generated": "2026-01-28",
+  "portfolio_summary": {
+    "total_vectors_indexed": 9016688,
+    "total_vectors_breakdown": "batch-01 (661,525) + batch-02 (8,355,163) = 9,016,688",
+    "total_datasets_processed": 19,
+    "total_datasets_breakdown": "batch-01 (6) + batch-02 (3) + research-corpus (10 institution corpora) = 19",
+    "total_documents_analyzed": 4600,
+    "total_institutions_validated": 10,
+    "active_repos": 9
+  },
+  "repos": [
+    {
+      "name": "semantic-indexing-batch-02",
+      "url": "https://github.com/whmatrix/semantic-indexing-batch-02",
+      "status": "ACTIVE",
+      "license": "MIT",
+      "vectors_indexed": 8355163,
+      "datasets": [
+        {
+          "name": "Wikipedia Featured Articles",
+          "vectors": 352606,
+          "source": "Wikimedia dumps (public domain)"
+        },
+        {
+          "name": "ArXiv ML Abstracts",
+          "vectors": 489294,
+          "source": "arXiv / RedPajama (open access)"
+        },
+        {
+          "name": "StackExchange Python Q&A",
+          "vectors": 7513263,
+          "source": "Stack Exchange data dump (CC-BY-SA)"
+        }
+      ],
+      "embedding_model": "intfloat/e5-large-v2",
+      "dimensions": 1024,
+      "index_type": "FAISS IndexFlatIP",
+      "validation_source": "results/indexes/*/summary.json"
+    },
+    {
+      "name": "semantic-indexing-batch-01",
+      "url": "https://github.com/whmatrix/semantic-indexing-batch-01",
+      "status": "SUPERSEDED (by batch-02)",
+      "license": "MIT",
+      "vectors_indexed": 661525,
+      "datasets": [
+        {
+          "name": "20 Newsgroups",
+          "vectors": 33077,
+          "source": "scikit-learn (public)"
+        },
+        {
+          "name": "SimpleWiki",
+          "vectors": 327923,
+          "source": "Wikipedia dumps (public domain)"
+        },
+        {
+          "name": "IMDB Reviews",
+          "vectors": 68643,
+          "source": "IMDB dataset (public)"
+        },
+        {
+          "name": "StackOverflow",
+          "vectors": 77550,
+          "source": "Stack Exchange data dump (CC-BY-SA)"
+        },
+        {
+          "name": "AG News",
+          "vectors": 127600,
+          "source": "AG News corpus (public)"
+        },
+        {
+          "name": "Disaster Tweets",
+          "vectors": 26732,
+          "source": "Kaggle (public)"
+        }
+      ],
+      "embedding_model": "intfloat/e5-large-v2",
+      "dimensions": 1024,
+      "index_type": "FAISS IndexFlatIP",
+      "validation_source": "portfolio_index_results/*/summary.json"
+    },
+    {
+      "name": "research-corpus-discovery",
+      "url": "https://github.com/whmatrix/research-corpus-discovery",
+      "status": "ACTIVE",
+      "license": "MIT",
+      "chunks_indexed": 75000,
+      "documents_analyzed": 4600,
+      "institutions_validated": 10,
+      "embedding_model": "intfloat/e5-large-v2",
+      "dimensions": 1024,
+      "index_type": "FAISS IndexFlatIP",
+      "evaluation": "Mean top-1 cosine similarity = 0.85 across 50 evaluation queries (see README Evaluation Method section)"
+    },
+    {
+      "name": "universal-protocol-v4.23",
+      "url": "https://github.com/whmatrix/universal-protocol-v4.23",
+      "status": "ACTIVE",
+      "license": "Apache-2.0",
+      "type": "SPECIFICATION",
+      "description": "Deliverable contracts, audit contracts, quality gates for RAG-ready indices"
+    },
+    {
+      "name": "interaction-mechanics-index",
+      "url": "https://github.com/whmatrix/interaction-mechanics-index",
+      "status": "ACTIVE",
+      "license": "MIT",
+      "type": "STRUCTURAL_ANALYSIS",
+      "description": "Dual FAISS indices (semantic + structural) for dialogue segment retrieval"
+    },
+    {
+      "name": "comparative-grammar-gpt-vs-claude",
+      "url": "https://github.com/whmatrix/comparative-grammar-gpt-vs-claude",
+      "status": "ACTIVE",
+      "license": "MIT",
+      "type": "STRUCTURAL_ANALYSIS",
+      "description": "Structural comparison of GPT and Claude dialogue grammars"
+    },
+    {
+      "name": "structural-collaboration-primitives",
+      "url": "https://github.com/whmatrix/structural-collaboration-primitives",
+      "status": "ACTIVE",
+      "license": "MIT",
+      "type": "STRUCTURAL_ANALYSIS",
+      "description": "12 interaction operators derived from validated dialogue grammars"
+    },
+    {
+      "name": "whmatrix",
+      "url": "https://github.com/whmatrix/whmatrix",
+      "status": "HUB",
+      "license": "MIT",
+      "type": "PORTFOLIO_HUB",
+      "description": "Profile README and portfolio routing"
+    },
+    {
+      "name": "whmatrix.github.io",
+      "url": "https://github.com/whmatrix/whmatrix.github.io",
+      "status": "ACTIVE",
+      "license": "MIT",
+      "type": "WEBSITE",
+      "description": "Portfolio website (static HTML)"
+    }
+  ],
+  "licenses": {
+    "MIT": ["semantic-indexing-batch-02", "semantic-indexing-batch-01", "research-corpus-discovery", "interaction-mechanics-index", "comparative-grammar-gpt-vs-claude", "structural-collaboration-primitives", "whmatrix", "whmatrix.github.io"],
+    "Apache-2.0": ["universal-protocol-v4.23"],
+    "rationale": {
+      "MIT": "Permissive, attribution-only. Suitable for tools and implementations.",
+      "Apache-2.0": "Protocol/spec repo uses Apache for explicit patent grant clause, protecting derivative implementations."
+    }
+  },
+  "data_sources": {
+    "wikipedia": "Wikimedia dumps (featured articles, public domain)",
+    "arxiv": "arXiv via RedPajama (open access papers)",
+    "stackexchange": "Stack Exchange data dump (CC-BY-SA 4.0)",
+    "newsgroups": "20 Newsgroups via scikit-learn (public)",
+    "simplewiki": "Simple English Wikipedia dumps (public domain)",
+    "imdb": "IMDB movie reviews dataset (public)",
+    "ag_news": "AG News corpus (public)",
+    "disaster_tweets": "Kaggle Disaster Tweets (public)",
+    "research_institutions": "10 institutions (anonymized in case studies)"
+  }
+}
