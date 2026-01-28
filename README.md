@@ -106,6 +106,20 @@ This portfolio provides all four.
 
 ---
 
+## What You Get
+
+| Deliverable | Format | Guarantee |
+|-------------|--------|-----------|
+| Vector index | FAISS IndexFlatIP (exact cosine via L2-normalized inner product) | Deterministic, byte-reproducible |
+| Chunk corpus | JSONL with metadata | len(vectors) == len(chunks) == len(metadata) |
+| Audit summary | JSON manifest | Pass/fail quality gates per Universal Protocol v4.23 |
+
+**What this is not:** No human-judged relevance labels. No MRR/MAP/NDCG claims. Scores are cosine similarity (vector alignment), not precision or recall. Domain suitability requires independent evaluation.
+
+**Reproduce it:** `git clone https://github.com/whmatrix/semantic-indexing-batch-02 && cd semantic-indexing-batch-02/mini-index && pip install sentence-transformers faiss-cpu && python demo_query.py`
+
+---
+
 ## For Recruiters / Clients
 
 - **If you need semantic search infrastructure:** Start with [batch-02](https://github.com/whmatrix/semantic-indexing-batch-02) + [protocol](https://github.com/whmatrix/universal-protocol-v4.23)

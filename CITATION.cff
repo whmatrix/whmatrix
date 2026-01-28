@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you reference this portfolio in academic or professional work, please cite as below."
+authors:
+  - family-names: "Mitchell"
+    given-names: "John"
+title: "whmatrix: Semantic Indexing & RAG Infrastructure Portfolio"
+version: 1.0.0
+date-released: 2026-01-28
+url: "https://github.com/whmatrix/whmatrix"
+type: software
+keywords:
+  - semantic-search
+  - rag
+  - portfolio
+  - faiss
+license: MIT
