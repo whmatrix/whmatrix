@@ -1,44 +1,118 @@
-> **Status: ENTRY_ROUTER (Portfolio Hub)**
->
-> Start here for an overview of professional work and research.
+# whmatrix: Semantic Indexing & RAG Infrastructure
 
-## Repository Role
-
-This repository serves as the **GitHub-native entrypoint** for my work.
-It indexes and routes to canonical protocol specifications, production
-indexing artifacts, and structural analysis systems.
-
-The portfolio site at https://whmatrix.github.io serves a **separate role**
-as an external narrative and client-facing surface.
-
-## Start Here
-
-| Resource | Description |
-|----------|-------------|
-| **[Universal Protocol v4.23](https://github.com/whmatrix/universal-protocol-v4.23)** | Canonical spec: deliverable contracts, audit contracts, quality gates |
-| **[semantic-indexing-batch-02](https://github.com/whmatrix/semantic-indexing-batch-02)** | Production implementation: 8.3M+ vectors indexed |
-| **[research-corpus-discovery](https://github.com/whmatrix/research-corpus-discovery)** | Applied methodology: semantic search across 10 research institutions, 4,600+ documents |
-
-> Note: [semantic-indexing-batch-01](https://github.com/whmatrix/semantic-indexing-batch-01) is a superseded foundation batch.
-
-## Structural Analysis Projects
-
-- https://github.com/whmatrix/interaction-mechanics-index — Behavior-first retrieval system for human–AI dialogue segments using dual FAISS indices
-- https://github.com/whmatrix/comparative-grammar-gpt-vs-claude — Structural crosswalk between GPT and Claude interaction grammars
-- https://github.com/whmatrix/structural-collaboration-primitives — Interaction primitive definitions derived from validated dialogue typologies
+*Open-source protocol, tested methodology, and production-scale implementations for building semantic search systems.*
 
 ---
 
-# whmatrix
+## Start Here (One-Screen Overview)
 
-## Professional / Client-Facing Work
+```
++-------------------------------------------------------------+
+|                      WHMATRIX PORTFOLIO                      |
+|                   Semantic Search Stack                      |
++-------------------------------------------------------------+
 
-Production-grade semantic indexing, RAG infrastructure, and audit-ready datasets.
+1. PROTOCOL (Foundation)
+   +-> universal-protocol-v4.23
+       "Deliverable spec & audit standards"
 
-- **Public website**: https://whmatrix.github.io
+2. PRODUCTION SCALE (Proof)
+   +-> semantic-indexing-batch-01  (661K vectors, 6 datasets)
+   +-> semantic-indexing-batch-02  (8.35M vectors, 3 datasets)
+       "How to index at scale. With benchmarks."
+
+3. APPLIED METHODOLOGY (Try It)
+   +-> research-corpus-discovery
+       "10 institutions, 4,600+ docs. Runnable scripts."
+
+4. STRUCTURAL ANALYSIS (Theory)
+   +-> comparative-grammar-gpt-vs-claude
+   +-> structural-collaboration-primitives
+   +-> interaction-mechanics-index
+       "Why dialogue structure matters to RAG"
+
+5. PORTFOLIO HUB
+   +-> whmatrix.github.io
+       "Full stats & routing"
+```
 
 ---
 
-## Applied Research
+## What Problem Does This Solve?
 
-- https://github.com/whmatrix/research-corpus-discovery — Semantic search framework tested on 10 research institutions with 4,600+ documents, anonymized case studies, and methodology documentation
+Semantic search at scale is hard. You need:
+- **Protocol** (so you don't reinvent it)
+- **Proof** (that it actually works)
+- **Methodology** (reproducible, auditable)
+- **Understanding** (why dialogue structure matters)
+
+This portfolio provides all four.
+
+---
+
+## The 60-Second Version
+
+1. **Start with the protocol** — [`universal-protocol-v4.23`](https://github.com/whmatrix/universal-protocol-v4.23)
+   - Defines the "RAG-ready index" deliverable spec
+   - Validation checkpoints and quality gates
+   - Reproducible deliverables
+
+2. **See it at scale** — [`semantic-indexing-batch-02`](https://github.com/whmatrix/semantic-indexing-batch-02)
+   - 8.35M+ vectors (Wikipedia, ArXiv, StackExchange)
+   - e5-large-v2 embeddings (1024-dim) + FAISS IndexFlatIP
+   - Parallel indexing, split-merge patterns, checkpointing
+
+3. **Try it yourself** — [`research-corpus-discovery`](https://github.com/whmatrix/research-corpus-discovery)
+   - Applied to 10 real research institutions
+   - 4,600+ documents, ~75,000 chunks
+   - Runnable scripts, anonymized case studies
+
+4. **Understand the theory** — Dialogue analysis repos
+   - Why interaction patterns matter
+   - How to structure semantic indices for dialogue
+
+---
+
+## Quickest Path
+
+- **30 seconds:** Read this page
+- **5 minutes:** Clone `research-corpus-discovery`, run the [Quick Start](https://github.com/whmatrix/research-corpus-discovery/blob/main/QUICK_START.md)
+- **30 minutes:** Read the [protocol spec](https://github.com/whmatrix/universal-protocol-v4.23)
+- **2 hours:** Understand the [full architecture](./ARCHITECTURE.md)
+
+---
+
+## All Repositories
+
+| Repository | What It Is | Key Stat |
+|------------|-----------|----------|
+| [universal-protocol-v4.23](https://github.com/whmatrix/universal-protocol-v4.23) | Protocol spec for RAG deliverables | Deliverable + audit contracts |
+| [semantic-indexing-batch-02](https://github.com/whmatrix/semantic-indexing-batch-02) | Production-scale semantic index | 8.35M vectors, 3 domains |
+| [semantic-indexing-batch-01](https://github.com/whmatrix/semantic-indexing-batch-01) | Foundational batch (superseded) | 661K vectors, 6 datasets |
+| [research-corpus-discovery](https://github.com/whmatrix/research-corpus-discovery) | Applied methodology across institutions | 4,600+ docs, runnable demo |
+| [comparative-grammar-gpt-vs-claude](https://github.com/whmatrix/comparative-grammar-gpt-vs-claude) | Dialogue structure analysis | GPT vs Claude grammar comparison |
+| [structural-collaboration-primitives](https://github.com/whmatrix/structural-collaboration-primitives) | Interaction primitives | 12 operators defined |
+| [interaction-mechanics-index](https://github.com/whmatrix/interaction-mechanics-index) | Dual FAISS indices for dialogue | Semantic + structural retrieval |
+
+---
+
+## For Recruiters / Clients
+
+- **If you need semantic search infrastructure:** Start with [batch-02](https://github.com/whmatrix/semantic-indexing-batch-02) + [protocol](https://github.com/whmatrix/universal-protocol-v4.23)
+- **If you need dialogue-aware RAG:** Start with [comparative-grammar](https://github.com/whmatrix/comparative-grammar-gpt-vs-claude)
+- **If you want proof it works on real data:** Start with [research-corpus-discovery](https://github.com/whmatrix/research-corpus-discovery)
+- **If you want validation standards:** Start with [universal-protocol](https://github.com/whmatrix/universal-protocol-v4.23)
+
+All repos include non-claims sections, stated limitations, runnable code where applicable, and cross-links to related work.
+
+---
+
+## Architecture Overview
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full system diagram, data flow, component responsibilities, and scale reference.
+
+---
+
+## Public Website
+
+https://whmatrix.github.io
