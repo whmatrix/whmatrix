@@ -1,7 +1,8 @@
 > **Author:** John Mitchell (@whmatrix)
-> **Status:** HUB
-> **Audience:** Everyone (recruiters, clients, researchers)
-> **Fast Path:** See "Start Here" below
+> **Status:** ACTIVE / HUB
+> **Audience:** ML Engineers / Data Architects / Recruiters / Enterprise Clients
+> **Environment:** Portfolio routing (no GPU required to browse)
+> **Fast Path:** [mini-index demo](https://github.com/whmatrix/semantic-indexing-batch-02/tree/main/mini-index) (60 seconds) or [research-corpus Quick Start](https://github.com/whmatrix/research-corpus-discovery)
 
 # John Mitchell (@whmatrix)
 
