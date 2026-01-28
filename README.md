@@ -1,4 +1,7 @@
 > **Author:** John Mitchell (@whmatrix)
+> **Status:** HUB
+> **Audience:** Everyone (recruiters, clients, researchers)
+> **Fast Path:** See "Start Here" below
 
 # John Mitchell (@whmatrix)
 
