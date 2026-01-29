@@ -201,6 +201,29 @@ See [`PORTFOLIO_MANIFEST.json`](./PORTFOLIO_MANIFEST.json) for itemized per-data
 
 ---
 
+## Verify This Portfolio
+
+All critical invariants are machine-checkable:
+
+```bash
+git clone https://github.com/whmatrix/whmatrix
+cd whmatrix
+./verify_portfolio.sh
+```
+
+This harness checks:
+- Hub identity is "John Mitchell (@whmatrix)"
+- Metric wording is "Mean top-1 cosine similarity" (not ambiguous)
+- mini-index proof loop files exist
+- PORTFOLIO_MANIFEST.json is valid
+- All URLs resolve (200 OK)
+
+**Expected output:** `✓ PORTFOLIO INVARIANTS VERIFIED`
+
+Runs automatically on every push via [GitHub Actions](.github/workflows/verify-portfolio.yml).
+
+---
+
 ## Public Website
 
 https://whmatrix.github.io
