@@ -201,6 +201,21 @@ See [`PORTFOLIO_MANIFEST.json`](./PORTFOLIO_MANIFEST.json) for itemized per-data
 
 ---
 
+## Verification Levels
+
+This portfolio is validated across 4 trust tiers (34 automated checks):
+
+| Level | What's Verified | Checks | Fail Means |
+|-------|-----------------|--------|------------|
+| **0: Surface** | Identity ("John Mitchell"), metric wording, non-claims present | 8 | Branding mismatch or wording drift |
+| **1: Proof Loop** | Mini-index demo files exist (summary, script, index) | 3 | Demo broken or rotted |
+| **2: Artifact Semantics** | FAISS index loads, dimensions=1024, IndexFlatIP, status=VERIFIED, vectors align with chunks | 11 | Index corrupted or misaligned |
+| **3: Ledger** | Manifest math (8,355,163 + 661,525 = 9,016,688), dataset sums, evidence files at exact pinned paths | 12 | Numbers changed or paths drifted |
+
+All 34 checks pass = all 4 tiers verified.
+
+---
+
 ## Verify This Portfolio
 
 [![Portfolio Verification](https://github.com/whmatrix/whmatrix/actions/workflows/verify-portfolio.yml/badge.svg)](https://github.com/whmatrix/whmatrix/actions/workflows/verify-portfolio.yml)
