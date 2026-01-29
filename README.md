@@ -214,6 +214,8 @@ This portfolio is validated across 4 trust tiers (34 automated checks):
 
 All 34 checks pass = all 4 tiers verified.
 
+Fastest verification: run Tier 0+1 in ~10s; full Tier 0–3 in ~30–60s.
+
 ---
 
 ## Verify This Portfolio
