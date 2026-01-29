@@ -16,13 +16,16 @@ trap "rm -rf $TEMP_DIR" EXIT
 
 RAW="https://raw.githubusercontent.com/${REPO_OWNER}"
 
+# Curl options: timeout after 10s connect / 30s total
+CURL_OPTS="--connect-timeout 10 --max-time 30 --retry 2 --retry-delay 2"
+
 # Helper: fetch URL content to a variable, then grep.
 # Avoids SIGPIPE issues when grep -q closes pipe early under pipefail.
 fetch_grep() {
   local url=$1
   local pattern=$2
   local content
-  content=$(curl -fsSL "$url")
+  content=$(curl $CURL_OPTS -fsSL "$url")
   echo "$content" | grep -q "$pattern"
 }
 
@@ -30,7 +33,7 @@ fetch_grep() {
 fetch_head_ok() {
   local url=$1
   local headers
-  headers=$(curl -fsSLI "$url")
+  headers=$(curl $CURL_OPTS -fsSLI "$url")
   echo "$headers" | grep -q "HTTP.*200"
 }
 
@@ -139,7 +142,7 @@ check "PORTFOLIO_MANIFEST.json exists" \
   "${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json"
 
 check "PORTFOLIO_MANIFEST.json is valid JSON" \
-  "curl -fsSL '${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json' -o '${TEMP_DIR}/manifest.json' && python3 -m json.tool < '${TEMP_DIR}/manifest.json' > /dev/null" \
+  "curl $CURL_OPTS -fsSL '${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json' -o '${TEMP_DIR}/manifest.json' && python3 -m json.tool < '${TEMP_DIR}/manifest.json' > /dev/null" \
   "Valid JSON (python3 -m json.tool succeeds)" \
   "${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json"
 
@@ -159,10 +162,10 @@ echo "Verifying: structure loads, vectors match, dimensions correct"
 echo
 
 # Download mini-index artifacts
-curl -fsSL "${RAW}/semantic-indexing-batch-02/${BRANCH}/mini-index/summary.json" \
+curl $CURL_OPTS -fsSL "${RAW}/semantic-indexing-batch-02/${BRANCH}/mini-index/summary.json" \
   -o "${TEMP_DIR}/summary.json" 2>/dev/null || true
 
-curl -fsSL "${RAW}/semantic-indexing-batch-02/${BRANCH}/mini-index/chunks.jsonl" \
+curl $CURL_OPTS -fsSL "${RAW}/semantic-indexing-batch-02/${BRANCH}/mini-index/chunks.jsonl" \
   -o "${TEMP_DIR}/chunks.jsonl" 2>/dev/null || true
 
 if [ -f "${TEMP_DIR}/summary.json" ]; then
@@ -226,7 +229,7 @@ echo
 
 # Download manifest if not already present from section 4
 if [ ! -f "${TEMP_DIR}/manifest.json" ]; then
-  curl -fsSL "${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json" \
+  curl $CURL_OPTS -fsSL "${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json" \
     -o "${TEMP_DIR}/manifest.json" 2>/dev/null || true
 fi
 
