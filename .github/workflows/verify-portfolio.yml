@@ -20,11 +20,11 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Run Portfolio Verification
+    - name: Run Portfolio Verification (with semantic checks)
       run: bash verify_portfolio.sh
 
     - name: Report Results
       if: always()
       run: |
         echo "## Portfolio Verification Results"
-        bash verify_portfolio.sh 2>&1 | tail -20
+        bash verify_portfolio.sh 2>&1 | tail -40
