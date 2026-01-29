@@ -203,6 +203,8 @@ See [`PORTFOLIO_MANIFEST.json`](./PORTFOLIO_MANIFEST.json) for itemized per-data
 
 ## Verify This Portfolio
 
+[![Portfolio Verification](https://github.com/whmatrix/whmatrix/actions/workflows/verify-portfolio.yml/badge.svg)](https://github.com/whmatrix/whmatrix/actions/workflows/verify-portfolio.yml)
+
 All critical invariants are machine-checkable:
 
 ```bash
