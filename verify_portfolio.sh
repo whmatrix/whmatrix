@@ -10,6 +10,24 @@ BRANCH="main"
 PASS=0
 FAIL=0
 
+# Helper: fetch URL content to a variable, then grep.
+# Avoids SIGPIPE issues when grep -q closes pipe early under pipefail.
+fetch_grep() {
+  local url=$1
+  local pattern=$2
+  local content
+  content=$(curl -fsSL "$url")
+  echo "$content" | grep -q "$pattern"
+}
+
+# Helper: check if URL returns 200 via HEAD request.
+fetch_head_ok() {
+  local url=$1
+  local headers
+  headers=$(curl -fsSLI "$url")
+  echo "$headers" | grep -q "HTTP.*200"
+}
+
 echo "======================================"
 echo "PORTFOLIO VERIFICATION HARNESS"
 echo "======================================"
@@ -26,64 +44,66 @@ check() {
   echo -n "Checking: $name ... "
   if eval "$cmd" > /dev/null 2>&1; then
     echo -e "${GREEN}✓ PASS${NC}"
-    ((PASS++))
+    PASS=$((PASS + 1))
   else
     echo -e "${RED}✗ FAIL${NC}"
-    ((FAIL++))
+    FAIL=$((FAIL + 1))
   fi
 }
 
+RAW="https://raw.githubusercontent.com/${REPO_OWNER}"
+
 echo "== 1. HUB README FRONT-MATTER =="
 check "Hub header shows 'John Mitchell (@whmatrix)'" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/whmatrix/'$BRANCH'/README.md" | grep -q "# John Mitchell (@whmatrix)"'
+  "fetch_grep '${RAW}/whmatrix/${BRANCH}/README.md' '# John Mitchell (@whmatrix)'"
 
 check "Hub has Status: ACTIVE / HUB" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/whmatrix/'$BRANCH'/README.md" | grep -q "Status.*ACTIVE.*HUB"'
+  "fetch_grep '${RAW}/whmatrix/${BRANCH}/README.md' 'Status.*ACTIVE.*HUB'"
 
 check "Hub has Author: John Mitchell" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/whmatrix/'$BRANCH'/README.md" | grep -q "Author.*John Mitchell"'
+  "fetch_grep '${RAW}/whmatrix/${BRANCH}/README.md' 'Author.*John Mitchell'"
 
 echo
 
 echo "== 2. RESEARCH-CORPUS METRIC CONTRACT =="
 check "research-corpus uses 'Mean top-1 cosine similarity: 0.85'" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/research-corpus-discovery/'$BRANCH'/README.md" | grep -q "Mean top-1 cosine similarity: 0.85"'
+  "fetch_grep '${RAW}/research-corpus-discovery/${BRANCH}/README.md' 'Mean top-1 cosine similarity: 0.85'"
 
 check "research-corpus has 'What the 0.85 Score Means' section" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/research-corpus-discovery/'$BRANCH'/README.md" | grep -q "What the 0.85 Score Means"'
+  "fetch_grep '${RAW}/research-corpus-discovery/${BRANCH}/README.md' 'What the 0.85 Score Means'"
 
 check "research-corpus metric defined as inner product / cosine" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/research-corpus-discovery/'$BRANCH'/README.md" | grep -q "inner product\|cosine"'
+  "fetch_grep '${RAW}/research-corpus-discovery/${BRANCH}/README.md' 'inner product\|cosine'"
 
 check "research-corpus non-claim: not human-judged" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/research-corpus-discovery/'$BRANCH'/README.md" | grep -q "not human-judged\|does NOT"'
+  "fetch_grep '${RAW}/research-corpus-discovery/${BRANCH}/README.md' 'Not human-judged\|Does NOT\|No human-judged'"
 
 check "research-corpus mentions L2-normalized embeddings" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/research-corpus-discovery/'$BRANCH'/README.md" | grep -q "L2-normalized"'
+  "fetch_grep '${RAW}/research-corpus-discovery/${BRANCH}/README.md' 'L2-normalized'"
 
 echo
 
 echo "== 3. MINI-INDEX PROOF LOOP =="
 check "mini-index/summary.json exists" \
-  'curl -fsSLI "https://raw.githubusercontent.com/'$REPO_OWNER'/semantic-indexing-batch-02/'$BRANCH'/mini-index/summary.json" | grep -q "HTTP.*200"'
+  "fetch_head_ok '${RAW}/semantic-indexing-batch-02/${BRANCH}/mini-index/summary.json'"
 
 check "mini-index/demo_query.py exists" \
-  'curl -fsSLI "https://raw.githubusercontent.com/'$REPO_OWNER'/semantic-indexing-batch-02/'$BRANCH'/mini-index/demo_query.py" | grep -q "HTTP.*200"'
+  "fetch_head_ok '${RAW}/semantic-indexing-batch-02/${BRANCH}/mini-index/demo_query.py'"
 
 check "mini-index/vectors.index exists" \
-  'curl -fsSLI "https://raw.githubusercontent.com/'$REPO_OWNER'/semantic-indexing-batch-02/'$BRANCH'/mini-index/vectors.index" | grep -q "HTTP.*200"'
+  "fetch_head_ok '${RAW}/semantic-indexing-batch-02/${BRANCH}/mini-index/vectors.index'"
 
 echo
 
 echo "== 4. PORTFOLIO MANIFEST =="
 check "PORTFOLIO_MANIFEST.json exists" \
-  'curl -fsSLI "https://raw.githubusercontent.com/'$REPO_OWNER'/whmatrix/'$BRANCH'/PORTFOLIO_MANIFEST.json" | grep -q "HTTP.*200"'
+  "fetch_head_ok '${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json'"
 
 check "PORTFOLIO_MANIFEST.json is valid JSON" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/whmatrix/'$BRANCH'/PORTFOLIO_MANIFEST.json" | python3 -m json.tool > /dev/null'
+  "fetch_grep '${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json' '.' && curl -fsSL '${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json' | python3 -m json.tool > /dev/null 2>&1"
 
 check "Manifest claims 9,016,688 total vectors" \
-  'curl -fsSL "https://raw.githubusercontent.com/'$REPO_OWNER'/whmatrix/'$BRANCH'/PORTFOLIO_MANIFEST.json" | grep -q "9016688"'
+  "fetch_grep '${RAW}/whmatrix/${BRANCH}/PORTFOLIO_MANIFEST.json' '9016688'"
 
 echo
 
