@@ -165,7 +165,7 @@
     }
   ],
   "licenses": {
-    "MIT": ["semantic-indexing-batch-02", "semantic-indexing-batch-01", "research-corpus-discovery", "interaction-mechanics-index", "comparative-grammar-gpt-vs-claude", "structural-collaboration-primitives", "whmatrix", "whmatrix.github.io"],
+    "MIT": ["semantic-indexing-batch-02", "semantic-indexing-batch-01", "research-corpus-discovery", "interaction-mechanics-index", "comparative-grammar-gpt-vs-claude", "structural-collaboration-primitives", "whmatrix", "whmatrix.github.io", "multi-domain-indexing-registry"],
     "Apache-2.0": ["universal-protocol-v4.23"],
     "rationale": {
       "MIT": "Permissive, attribution-only. Suitable for tools and implementations.",
