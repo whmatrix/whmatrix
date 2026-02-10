@@ -4,11 +4,16 @@
   "portfolio_summary": {
     "total_vectors_indexed": 9016688,
     "total_vectors_breakdown": "batch-01 (661,525) + batch-02 (8,355,163) = 9,016,688",
+    "total_vectors_full_corpus": 155706504,
+    "total_vectors_full_corpus_note": "244 datasets across 8 domains — see multi-domain-indexing-registry",
     "total_datasets_processed": 19,
+    "total_datasets_processed_note": "Portfolio repo datasets (batch-01 + batch-02 + research-corpus)",
+    "total_datasets_full_corpus": 244,
+    "total_datasets_full_corpus_note": "Full verified corpus — see multi-domain-indexing-registry",
     "total_datasets_breakdown": "batch-01 (6) + batch-02 (3) + research-corpus (10 institution corpora) = 19",
     "total_documents_analyzed": 4600,
     "total_institutions_validated": 10,
-    "active_repos": 9
+    "active_repos": 10
   },
   "repos": [
     {
@@ -142,6 +147,21 @@
       "license": "MIT",
       "type": "WEBSITE",
       "description": "Portfolio website (static HTML)"
+    },
+    {
+      "name": "multi-domain-indexing-registry",
+      "url": "https://github.com/whmatrix/multi-domain-indexing-registry",
+      "status": "ACTIVE",
+      "license": "MIT",
+      "type": "VALIDATION",
+      "datasets_verified": 244,
+      "vectors_verified": 155706504,
+      "domains": 8,
+      "retrieval_active": 226,
+      "embedding_model": "intfloat/e5-large-v2",
+      "dimensions": 1024,
+      "index_type": "FAISS IndexFlatIP",
+      "description": "Pipeline validation artifact: 244 datasets, 155.7M vectors, 8 domains, zero silent failures"
     }
   ],
   "licenses": {
