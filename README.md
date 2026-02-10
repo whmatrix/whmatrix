@@ -29,6 +29,7 @@ and reproducible methodology across real institutional corpora.
 2. PRODUCTION SCALE (Proof)
    +-> semantic-indexing-batch-01  (661K vectors, 6 datasets)
    +-> semantic-indexing-batch-02  (8.35M vectors, 3 datasets)
+   +-> multi-domain-indexing-registry (155.7M vectors, 244 datasets)
        "How to index at scale. With benchmarks."
 
 3. APPLIED METHODOLOGY (Try It)
@@ -103,6 +104,7 @@ This portfolio provides all four.
 | [comparative-grammar-gpt-vs-claude](https://github.com/whmatrix/comparative-grammar-gpt-vs-claude) | Dialogue structure analysis | GPT vs Claude grammar comparison |
 | [structural-collaboration-primitives](https://github.com/whmatrix/structural-collaboration-primitives) | Interaction primitives | 12 operators defined |
 | [interaction-mechanics-index](https://github.com/whmatrix/interaction-mechanics-index) | Dual FAISS indices for dialogue | Semantic + structural retrieval |
+| [multi-domain-indexing-registry](https://github.com/whmatrix/multi-domain-indexing-registry) | Pipeline validation artifact | 244 datasets, 155.7M vectors, 8 domains |
 
 ---
 
@@ -128,6 +130,8 @@ This portfolio provides all four.
 - **If you want validation standards:** Start with [universal-protocol](https://github.com/whmatrix/universal-protocol-v4.23)
 
 All repos include non-claims sections, stated limitations, runnable code where applicable, and cross-links to related work.
+
+- **Full Verified Corpus**: 244 datasets, 155,706,504 vectors across 8 domains (see [multi-domain-indexing-registry](https://github.com/whmatrix/multi-domain-indexing-registry))
 
 ---
 
@@ -195,7 +199,8 @@ python demo_query.py
 | Datasets processed | 19 | batch-01 (6) + batch-02 (3) + research-corpus (10) |
 | Research documents analyzed | 4,600+ | research-corpus-discovery |
 | Institutions validated | 10 | research-corpus-discovery |
-| Open-source repos | 9 | This portfolio |
+| Full verified corpus | 155,706,504 | multi-domain-indexing-registry (244 datasets, 8 domains) |
+| Open-source repos | 10 | This portfolio |
 
 See [`PORTFOLIO_MANIFEST.json`](./PORTFOLIO_MANIFEST.json) for itemized per-dataset vector counts and validation sources.
 
